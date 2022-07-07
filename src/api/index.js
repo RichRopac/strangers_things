@@ -3,9 +3,7 @@ import axios from 'axios';
 const cohortName = '2206-FTB-ET-WEB-FT';
 const API_URL = `https://strangers-things.herokuapp.com/api/`;
 const theURL = `https://strangers-things.herokuapp.com/api/2206-FTB-ET-WEB-FT/posts`
-
-
-  
+ 
   
 export const getPosts = async () => {
   try {

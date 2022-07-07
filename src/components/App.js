@@ -1,9 +1,15 @@
 import React from 'react'
-import Posts from './Posts'
+import {Posts, NavBar} from "./" 
+import {Route, Routes} from 'react-router-dom'
 
 const App = () => {
 return(<>
-<Posts/>
+<NavBar/>
+<Routes>
+   <Route path="/Posts" element= {<Posts/>} />
+</Routes>
+
+
 </>)
 
 }

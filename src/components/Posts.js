@@ -3,8 +3,10 @@ import { getPosts } from "../api";
 import './Posts.css';
 
 const Posts = () => {
-    const [posts, setPosts] = useState([]);
+    
+  const [posts, setPosts] = useState([]);
 
+  
     useEffect( () => {
       getPosts().then( (response) => {
         
@@ -13,7 +15,6 @@ const Posts = () => {
 
     }, []) 
     
-    console.log(posts)
     
     return (
         <div className="user-posts">
@@ -31,6 +32,5 @@ const Posts = () => {
         </div>
       );
 }
-
 
 export default Posts

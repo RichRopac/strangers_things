@@ -1,0 +1,13 @@
+
+.NavBar{
+    display:flex;
+    width: 95%;
+    justify-content: right;
+    
+    
+}
+
+.link {
+    margin-left: 0px;
+    margin-right: 10px;    
+}

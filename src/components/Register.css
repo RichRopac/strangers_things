@@ -1,0 +1,13 @@
+.username-input-container {
+    display: flex;
+    flex-direction: row;
+  }
+  #username {
+    width: 25%;
+  }
+  .register-container {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+  }
+  

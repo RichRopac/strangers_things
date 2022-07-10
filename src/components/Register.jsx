@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { useState } from "react";
 import { userRegistration } from "../api"
+import "./Register.css"
 
 const Register = (props) => {
     const [username, setUsername] = useState('')
@@ -35,32 +36,33 @@ const Register = (props) => {
     
 }
 return (
-  <div className='box'>('This is your Registration Component')
-    <form onSubmit={handleSubmit} >
-       <label>Username</label>
-
-       <input
-         id="username"
-         onChange={handleOnChange}
-         placeholder="Username Here"
-         value={username}
-         type="text"
-        />
-
-        <label>Password</label>
-
-        <input
-         id="password"
-         onChange={handleOnChange}
-         placeholder="Password Here"
-         value={password}
-         type="password"
-
-        />
-        <button type="submit">Register</button>
-        <p>{errorMessage}</p>
-    </form>
-  </div>
+  <div className="box">
+      ('This is your Register Component')
+      <form onSubmit={handleSubmit}>
+        <div className="register-container">
+          <div className="username-input-container">
+            <label>Username</label>
+            <input
+              id="username"
+              onChange={handleOnChange}
+              placeholder="Username Here"
+              value={username}
+              type="text"
+            />
+          </div>
+          <label>Password</label>
+          <input
+            id="password"
+            onChange={handleOnChange}
+            placeholder="Password Here"
+            value={password}
+            type="password"
+          />
+          <button type="submit">Register</button>
+          <p>{errorMessage}</p>
+        </div>
+      </form>
+    </div>
 )}
 
 export default Register

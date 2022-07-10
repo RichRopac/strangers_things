@@ -25,7 +25,7 @@ const Posts = () => {
               <p>User ID: {post.author._id }</p>
               <p>Located In: {post.location}</p>
               <p>Title: {post.title}</p>
-              <p className="btm">Description: {post.description}</p>
+              <p className="footer">Description: {post.description}</p>
         
             </div>
           ))}

@@ -10,6 +10,7 @@ return(
         <NavLink to = "/Register">Register</NavLink>
         <NavLink to = "/Login">Login</NavLink>
         <NavLink to = "/Profile">Profile</NavLink>
+
     </div>
 );    
 } 

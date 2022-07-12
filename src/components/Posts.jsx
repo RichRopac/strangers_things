@@ -31,45 +31,45 @@ const Posts = (props) => {
       }
       , []) 
   
-  console.log("made it to display posts")
-  console.log("Post: ")
-  
   const displayPosts = 
      allPosts.length ?
-     (<ol className="box all-posts">
+     (<div className="box all-posts">
          {allPosts.map((post) => { 
             return (
-              <li className="box" key={`all-posts-${post._id}`}>
-                  {post.title}
-                  <button id={`${post._id}`}
+              <p className="card" key={`all-posts-${post._id}`}>
+                  <h2><u>Title:</u> {post.title}</h2>
+                  <h3><u>Author:</u> {post.author.username}</h3>
+                  <h3><u>Location:</u> {post.location}</h3>
+                  <button className='button' id={`${post._id}`}
                     onClick={(event) => {
                      event.preventDefault()
                      setMessageFlag(true)
                      handleMessage(event)
                      }
                      }>Message Owner</button>
-                     <button id={`${post._id}`} onClick={(event) => {
+                     <button className='button' id={`${post._id}`} onClick={(event) => {
                         event.preventDefault()
                         setModPostFlag(true)
                         handleMessage(event)
-                     }}>Modify This Post</button>
-                     <button id={`${post._id}`} onClick={handleDelete}
+                     }
+                     }>Modify This Post</button>
+                     <button className='button' id={`${post._id}`} onClick={handleDelete}
                      >Delete This Post</button>
-              </li>
+              </p>
             )
            }
          )}
-     </ol>)
+     </div>)
         : <div>Loading Posts...</div>
       
-     console.log("Made it to Return")
+     
      console.log(allPosts)
     
     
     return (
 
-        <div className='box all-posts'>
-        {`This is your Posts Component`}
+        <div className='card-row card'>
+        <h1 className="user-posts">{"Users' Posts"}</h1>
           {newPostFlag ?
             <NewPost
               setNewPostFlag={setNewPostFlag}
@@ -83,12 +83,10 @@ const Posts = (props) => {
               
               />
              : <>        
-              <button onClick={() => {
+              <button className="createButton" onClick={() => {
                   setNewPostFlag(true)
               }}>Create New Post</button>
-              <button onClick={() => {
-                  setModPostFlag(true)
-              }}>Modify This Post</button>
+              
               { displayPosts }
         
             </>

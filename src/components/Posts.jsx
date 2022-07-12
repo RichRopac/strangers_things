@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { NewPost, ModPost} from './'
-import { deletePost, getAllPosts } from "../api";
+import { getAllPosts, deletePost } from "../api";
 import './Posts.css';
-const Posts = (props) => {
+const Posts = (props) => {   
   const [newPostFlag, setNewPostFlag] = useState(false);
   const [modPostFlag, setModPostFlag] = useState(false);
   const {setSinglePost, setMessageFlag, singlePost} = props
@@ -14,9 +14,9 @@ const Posts = (props) => {
   const handleDelete = async (event) => {
       event.preventDefault()
       const token = localStorage.getItem("token")
-      deletePost(event.target.id)
+      deletePost(token, event.target.id)
   }
-  console.log("made it to useEffect")
+  
       useEffect( () => {
         async function fetchPosts() {
          
@@ -40,6 +40,8 @@ const Posts = (props) => {
                   <h2><u>Title:</u> {post.title}</h2>
                   <h3><u>Author:</u> {post.author.username}</h3>
                   <h3><u>Location:</u> {post.location}</h3>
+                  <h3><u>Description:</u> {post.description}</h3>
+                  <h3><u>Price:</u> {post.price} </h3>
                   <button className='button' id={`${post._id}`}
                     onClick={(event) => {
                      event.preventDefault()
@@ -51,8 +53,7 @@ const Posts = (props) => {
                         event.preventDefault()
                         setModPostFlag(true)
                         handleMessage(event)
-                     }
-                     }>Modify This Post</button>
+                     }}>Modify This Post  </button>  
                      <button className='button' id={`${post._id}`} onClick={handleDelete}
                      >Delete This Post</button>
               </p>

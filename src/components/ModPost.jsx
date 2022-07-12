@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { modifyPost } from '../api'
-
+  
 const ModPost = (props) => {
-    const {singlePost, setModPostflag} = props
+    const {singlePost, setModPostFlag} = props
     const [title, setTitle] = useState(singlePost.title)
     const [description, setDescription] = useState(singlePost.description)
     const [price, setPrice] = useState(singlePost.price)
+    const [location, setLocation] = useState(singlePost.location)
     const handleSubmit = async (event) => {
         event.preventDefault()
         const token = localStorage.getItem("token")
@@ -25,6 +26,7 @@ const ModPost = (props) => {
             value={title}
             onChange={(event) => {
                 setTitle(event.target.value)
+                 
             }}   
             >
          </input>
@@ -33,6 +35,14 @@ const ModPost = (props) => {
             value={description}
             onChange={(event) => {
                 setDescription(event.target.value)
+            }}
+            >
+        </input>
+         <label>Location</label>
+         <input
+            value={location}
+            onChange={(event) => {
+                setLocation(event.target.value)
             }}
             >
             </input>
@@ -50,8 +60,10 @@ const ModPost = (props) => {
         </form>
     <button onClick = {
          () => {
-            setModPostflag(false)
-         }}>Cancel Modifing Post</button>
+            setModPostFlag(false)
+         }}>
+            Cancel Modifyinng Post
+         </button>
     </div>
 )}
  

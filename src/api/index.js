@@ -2,29 +2,26 @@ import axios from 'axios';
 const API_URL = "https://strangers-things.herokuapp.com/api/"
 const COHORT = "2206-FTB-ET-WEB-FT"
 
-export const getAllPosts = async () => {
-  try {
-     const response = await fetch(`${API_URL + COHORT}/posts`);
-     const posts = await response.json();
-     console.log("Posts: ",posts)
-     return posts;
-    } catch (err) {
-       console.log('There was a problem getting posts!')
-      }    
-
-}
-
-
 // export const getAllPosts = async () => {
-//   const response = await fetch(`${API_URL + COHORT}/posts`)
-//   const result = await response.json()
-//   const data = result.data.posts 
-//   console.log("Data ")
-//   return data
+//   try {
+//      const response = await fetch(`${API_URL + COHORT}/posts`);
+//      const posts = await response.json();
+//      console.log("Posts: ",posts)
+//      return posts;
+//     } catch (err) {
+//        console.log('There was a problem getting posts!')
+//       }    
+
 // }
 
 
-
+export const getAllPosts = async () => {
+  const response = await fetch(`${API_URL + COHORT}/posts`)
+  const result = await response.json()
+  const data = result.data.posts 
+  console.log("Data ")
+  return data
+}
 
 export const userRegistration = async (username, password) => {
     console.log("User and Password", username, password)

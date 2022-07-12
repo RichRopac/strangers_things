@@ -4,6 +4,7 @@ const NewPost = (props) => {
     const { setNewPostFlag, allPosts, setAllPosts } = props 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
+    const [location, setLocation] = useState("")
     const [price, setPrice] = useState("free")
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -11,6 +12,7 @@ const NewPost = (props) => {
         const newPost = {
             title: title,
             description: description,
+            location: location,
             price: price,
     }
     const freshPost = await postNew(token, newPost)
@@ -37,6 +39,14 @@ const NewPost = (props) => {
             }}
             >
             </input>
+            <label>Location</label>
+         <input
+            value={location}
+            onChange={(event) => {
+                setLocation(event.target.value)
+            }}
+            >
+            </input>
             <label>
                 Price
              </label>
@@ -47,7 +57,7 @@ const NewPost = (props) => {
             }}
             >
             </input>
-            <button type="submit">Send</button>
+            <button type="submit">Submit</button>
         </form>
     <button onClick = {
          () => {

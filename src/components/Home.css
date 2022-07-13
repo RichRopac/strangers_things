@@ -1,20 +1,15 @@
-
-
-.homePage{
-    font-family: 'Henny Penny', cursive;
-    font-size: 130px;
-    color: violet;
-    -webkit-text-stroke: 5px black;
-    width: 100%;
-    height: 100%;
-    display:flex;
-    align-items: center;
-    justify-content: center; 
-    background-image: url("./pics/Junk.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
- }
-
-
-
+.homePage {
+  font-family: "Henny Penny", cursive;
+  font-size: 130px;
+  color: violet;
+  -webkit-text-stroke: 5px black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./pics/Junk.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

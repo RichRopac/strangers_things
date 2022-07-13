@@ -32,33 +32,33 @@ const Login = (props) => {
     }
   };
   return (
-    <div className="box">
-      ('This is your Login Component')
-      <form onSubmit={handleSubmit}>
-        <div className="login-container">
-          <div className="username-input-container">
-            <label>Username</label>
-            <input
-              id="username"
-              onChange={handleOnChange}
-              placeholder="Username Here"
-              value={username}
-              type="text"
-            />
-          </div>
-          <label>Password</label>
+    <form className="form" onSubmit={handleSubmit}>
+      <h2>Please Login To Begin</h2>
+      <div className="">
+        <div className="">
+          <label className=""></label>
           <input
-            id="password"
+            id="username"
             onChange={handleOnChange}
-            placeholder="Password Here"
-            value={password}
-            type="password"
+            placeholder="Username"
+            value={username}
+            type="text"
           />
-          <button type="submit">Login</button>
-          <p>{errorMessage}</p>
         </div>
-      </form>
-    </div>
+        <label className=""></label>
+        <input
+          id="password"
+          onChange={handleOnChange}
+          placeholder="Password Here"
+          value={password}
+          type="password"
+        />
+        <button className="button" type="submit">
+          Login
+        </button>
+        <p className="errorMessage">{errorMessage}</p>
+      </div>
+    </form>
   );
 };
 
